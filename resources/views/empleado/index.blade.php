@@ -1,0 +1,57 @@
+@extends('layouts.cuerpo')
+
+@section('hijos')
+
+
+
+<h1>Lista de Empleado</h1>
+
+<a href="/empleado/create"class="btn btn-success">Crear</a> 
+<a href="/empleado" class="btn btn-primary">Volver</a>
+
+
+<table class="table table-striped table-hover">
+<thead>
+    <tr>
+        <th>ID</th>
+        <th>Empleado</th>
+        <th>Telefono</th>
+        <th>ID_Cargo</th>
+        
+        
+    </tr>
+
+</thead>
+
+<tbody>
+
+@foreach($empleado as $empleado)
+
+
+<tr>
+    <th>{{$empleado->id}}</th>
+    <th>{{$empleado->nomempleado}}</th>
+    <th>{{$empleado->telefono}}</th>
+    <th>{{$empleado->idcargo}}</th>
+    
+    <th>
+       
+
+
+        <form action="/empleado/{{{$empleado->id}}}" method="POST"> 
+        @csrf
+            @Method('DELETE')
+           
+
+       
+            <a href="/empleado/{{$empleado->id}}/{{$empleado->idcargo}}/edit" class="btn btn-primary">Editar</a>
+        <button type="submit"class="btn btn-warning">Borrar</button>
+        </form>
+    </th>
+</tr>
+
+@endforeach
+</tbody>
+
+</table>
+@endsection
