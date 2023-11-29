@@ -27,13 +27,10 @@
 
 <div class="mb-3">
   <label for="" class="form-label">cargo</label>
-  <select> @foreach($idc as $cargo)
-  <option value="{{$empleado->idcargo}}">
-   {{$cargo}}
-  </option>
-@endforeach</select>
-
+  <input type="text" class="form-control" id="telefono" value="{{$empleado->idcargo}}" name="telefono">
 </div>
+
+
 
 <div class="mb-3">
   <button type="submit" class="btn btn-primary">Guardar</button>

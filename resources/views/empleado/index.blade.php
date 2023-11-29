@@ -44,7 +44,7 @@
            
 
        
-            <a href="/empleado/{{$empleado->id}}/{{$empleado->idcargo}}/edit" class="btn btn-primary">Editar</a>
+            <a href="/empleado/{{$empleado->id}}/edit" class="btn btn-primary">Editar</a>
         <button type="submit"class="btn btn-warning">Borrar</button>
         </form>
     </th>

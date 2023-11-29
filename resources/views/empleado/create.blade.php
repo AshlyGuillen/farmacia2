@@ -11,6 +11,10 @@
 <form action="/empleado"  method="POST">
 @csrf
 
+<div class="mb-3">
+  <label for="" >Codigo</label>
+  <input type="text" class="form-control" id="codigo"  name="codigo">
+</div>
 
 <div class="mb-3">
   <label for="" >Nombre</label>

@@ -17,7 +17,9 @@ use App\Http\Controllers\ClienteControllers;
 */
 
 
-route::get('/empleado/{cargo}',[EmpleadoControllers::class,'edit']);
+route::get('/empleado',[EmpleadoControllers::class,'edit']);
+route::get('/empleado',[EmpleadoControllers::class,'create']);
+route::get('/empleado/idcargo/nomcargo',[EmpleadoControllers::class,'index']);
 
 
 route::resource('/cargo','App\Http\Controllers\CargoEmpleadoControllers');

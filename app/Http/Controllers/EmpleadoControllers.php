@@ -20,11 +20,9 @@ class EmpleadoControllers extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(string $id)
+    public function create()
     {
-        $id=$id;
-        
-        return view('empleado.create')->with('cargo',$id);
+        return view('empleado.create');
     }
 
     /**
@@ -40,14 +38,19 @@ class EmpleadoControllers extends Controller
        
         $empleado->save();
         
-        return view('empleado.index')->with('empleado',$empleado);
+        return redirect('/empleado');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id, string $nomcargo )
     {
+        $id=$idCargo;
+        $nomcargo=$nomcargo;
+        $empleado=Empleado::all();
+        return view 
+
        
 
     }
@@ -55,12 +58,12 @@ class EmpleadoControllers extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id,string $idc)
+    public function edit(string $id)
     {
        
-        $cargo=[$idc];
+        
         $Editar=Empleado::find($id);
-        return view('empleado.edit')->with('empleado',$Editar)->with('cargo',$cargo);
+        return view('empleado.edit')->with('empleado',$Editar);
     }
 
     /**
